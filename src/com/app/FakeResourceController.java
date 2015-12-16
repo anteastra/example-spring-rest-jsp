@@ -22,12 +22,15 @@ import com.domain.FakeResource;
 public class FakeResourceController {
 
 	private static List<FakeResource> resList = new ArrayList<>();
+	private static List<FakeResource> resListOld = new ArrayList<>();
 
 	static {
 		resList.add(
 				new FakeResource(1, "first_res", "It is a first resource!"));
 		resList.add(new FakeResource(2, "second_res",
 				"just another second resource"));
+		
+		resListOld.add(new FakeResource(5, "old resource", "It is a very old resource!"));
 	}
 
 	@RequestMapping(value = "/{resourceId}", method = RequestMethod.GET)

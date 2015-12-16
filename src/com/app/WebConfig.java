@@ -18,5 +18,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void configureContentNegotiation(
 			ContentNegotiationConfigurer configurer) {
 		configurer.defaultContentType(MediaType.APPLICATION_XML);
+		configurer.favorPathExtension(false);
+		configurer.favorParameter(false);
+		configurer.ignoreAcceptHeader(false);
+		configurer.useJaf(false);
+        configurer.mediaType("xml", MediaType.APPLICATION_XML);
+        configurer.mediaType("json", MediaType.APPLICATION_JSON);
 	}
 }
